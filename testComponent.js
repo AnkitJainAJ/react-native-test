@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Button, Image } from 'react-native';
 
 import TextComponent from './components/TextComponent';
+import CardCarousel from './components/CardCarousel';
 
 export default function App() {
   const [isBtnClicked, setIsBtnClicked] = useState(false);
@@ -18,16 +19,18 @@ export default function App() {
   };
 
   return (
-    <View style={styles.screen}>
-      <Image
-        style={styles.image}
-        source={{
-          uri: 'https://images.oyoroomscdn.com/uploads/hotel_image/878/medium/d552811989ff7d77.jpg',
-        }}
-      />
-      <Button title="Show Message" onPress={() => btnClickHandler()} />
-      {isBtnClicked && <TextComponent/>}
-
+    <View>
+      <View style={styles.screen}>
+        <Image
+          style={styles.image}
+          source={{
+            uri: 'https://images.oyoroomscdn.com/uploads/hotel_image/878/medium/d552811989ff7d77.jpg',
+          }}
+        />
+        <Button title="Show Message" onPress={() => btnClickHandler()} />
+        {isBtnClicked && <TextComponent/>}
+      </View>
+      <CardCarousel />
     </View>
   );
 }
