@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Button, Image } from 'react-native';
 
 import TextComponent from './components/TextComponent';
-import CardCarousel from './components/CardCarousel';
+import CardCarousal from './components/CardCarousal';
 
 export default function App() {
   const [isBtnClicked, setIsBtnClicked] = useState(false);
@@ -30,7 +30,7 @@ export default function App() {
         <Button title="Show Message" onPress={() => btnClickHandler()} />
         {isBtnClicked && <TextComponent/>}
       </View>
-      <CardCarousel />
+      <CardCarousal />
     </View>
   );
 }
