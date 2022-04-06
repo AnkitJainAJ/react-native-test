@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   cardContainer: {
-    width: 140,
+    width: 300,
     height: 250,
     borderWidth: 0.5,
     borderColor: 'grey',
