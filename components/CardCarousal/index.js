@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, FlatList, StyleSheet, ScrollView, Image } from 'react-native';
+import { styles } from './CardCarousalcss';
 
 const data = [
   {
@@ -39,7 +40,7 @@ const CardCarousel = (props) => {
             style={styles.image}
           />
         </View>
-        <View style={styles.cardTitleClass}>{item.title}</View>
+        {/* <View style={styles.cardTitleClass}>{item.title}</View> */}
       </View>
     );
   };
@@ -59,43 +60,13 @@ const CardCarousel = (props) => {
   );
 };
 
-const styles = StyleSheet.create({
-  cardWrapper: {
-    flex: 1,
-    overflow: 'hidden',
-    paddingTop: '20px'
-  },
-  image: {
-    height: '100%',
-    width: '100%',
-    paddingTop: '20px',
-    borderRadius: '8px'
-  },
-  cardOuter: {
-    height: '100%',
-    overflow: 'hidden',
-    width: '100%'
-  },
-  cardContainer: {
-    width: 300,
-    height: 250,
-    borderWidth: 0.5,
-    borderColor: 'grey',
-    overflow: 'scroll',
-    borderRadius: '8px',
-    marginLeft: '16px',
-    marginTop: '16px'
-  },
-  textClass: {
-    fontWeight: 700,
-    paddingLeft: '16px',
-    fontSize: '18px'
-  },
-  cardTitleClass: {
-    textAlign: 'center',
-    marginLeft: '16px',
-    marginTop: '8px'
-  }
-});
+const flattenStyle = StyleSheet.flatten([
+  styles.cardContainer,
+  styles.cardWrapper,
+  styles.cardOuter,
+  styles.textClass
+]);
+
+console.log(flattenStyle);
 
 export default CardCarousel;
